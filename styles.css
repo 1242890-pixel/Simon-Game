@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   text-align: center;
   background-color: #011F3F;
@@ -5,12 +9,11 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
-  box-sizing: border-box;
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: clamp(1.1rem, 5vw, 2.2rem);
+  font-size: clamp(1rem, 4.5vw, 2rem);
   line-height: 1.6;
   margin: 6% 5% 5%;
   color: #FEF2BF;
@@ -23,24 +26,26 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(12px, 4vw, 30px);
-  padding: 0 15px;
-  box-sizing: border-box;
+  gap: 16px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(12px, 4vw, 30px);
-  width: min(92vw, 420px);
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 94vw;
+  max-width: 520px;
 }
 
 .btn {
   display: block;
   width: 100%;
   aspect-ratio: 1 / 1;
-  box-sizing: border-box;
-  border: clamp(5px, 1.8vw, 10px) solid black;
+  margin: 0;
+  border: clamp(6px, 2vw, 10px) solid black;
   border-radius: 20%;
   touch-action: manipulation;
   cursor: pointer;
