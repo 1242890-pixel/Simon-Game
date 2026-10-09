@@ -1,0 +1,148 @@
+body {
+  text-align: center;
+  background-color: #011F3F;
+  margin: 0;
+}
+
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3rem;
+  margin: 5%;
+  color: #FEF2BF;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 200px));
+  gap: 30px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  box-sizing: border-box;
+  border: 10px solid black;
+  border-radius: 20%;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+.footer {
+  margin-top: 40px;
+  padding: 20px 10px;
+  color: #FEF2BF;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  text-align: center;
+}
+
+.footer p {
+  margin: 0 0 12px;
+}
+
+.footer span {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.insta {
+  color: #FEF2BF;
+  font-size: 28px;
+  text-decoration: none;
+  transition: transform 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.insta:hover {
+  color: #E1306C;
+  transform: scale(1.2);
+}
+
+/* الشاشات المتوسطة */
+@media (max-width: 600px) {
+  #level-title {
+    font-size: 1.8rem;
+    margin: 10% 5%;
+  }
+
+  .footer {
+    margin-top: 25px;
+    padding: 15px 10px;
+    font-size: 12px;
+  }
+
+  .container {
+    gap: 20px;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 160px));
+    gap: 20px;
+  }
+
+  .btn {
+    border-width: 8px;
+  }
+}
+
+/* الشاشات الصغيرة */
+@media (max-width: 380px) {
+  #level-title {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .container {
+    padding: 0 20px;
+    gap: 12px;
+  }
+
+  .row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .btn {
+    border-width: 6px;
+  }
+}
