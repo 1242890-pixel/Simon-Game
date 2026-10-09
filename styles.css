@@ -2,32 +2,37 @@ body {
   text-align: center;
   background-color: #011F3F;
   margin: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+  box-sizing: border-box;
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin: 5%;
+  font-size: clamp(1.1rem, 5vw, 2.2rem);
+  line-height: 1.6;
+  margin: 6% 5% 5%;
   color: #FEF2BF;
   cursor: pointer;
   user-select: none;
-  -webkit-tap-highlight-color: transparent;}
+  -webkit-tap-highlight-color: transparent;
+}
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: clamp(12px, 4vw, 30px);
   padding: 0 15px;
   box-sizing: border-box;
 }
 
 .row {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 200px));
-  gap: 30px;
-  justify-content: center;
-  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 4vw, 30px);
+  width: min(92vw, 420px);
 }
 
 .btn {
@@ -35,10 +40,11 @@ body {
   width: 100%;
   aspect-ratio: 1 / 1;
   box-sizing: border-box;
-  border: 10px solid black;
+  border: clamp(5px, 1.8vw, 10px) solid black;
   border-radius: 20%;
   touch-action: manipulation;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .game-over {
@@ -68,7 +74,7 @@ body {
 }
 
 .footer {
-  margin-top: 40px;
+  margin-top: 30px;
   padding: 20px 10px;
   color: #FEF2BF;
   font-family: 'Press Start 2P', cursive;
@@ -96,53 +102,4 @@ body {
 .insta:hover {
   color: #E1306C;
   transform: scale(1.2);
-}
-
-/* الشاشات المتوسطة */
-@media (max-width: 600px) {
-  #level-title {
-    font-size: 1.8rem;
-    margin: 10% 5%;
-  }
-
-  .footer {
-    margin-top: 25px;
-    padding: 15px 10px;
-    font-size: 12px;
-  }
-
-  .container {
-    gap: 20px;
-  }
-
-  .row {
-    grid-template-columns: repeat(2, minmax(0, 160px));
-    gap: 20px;
-  }
-
-  .btn {
-    border-width: 8px;
-  }
-}
-
-/* الشاشات الصغيرة */
-@media (max-width: 380px) {
-  #level-title {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-
-  .container {
-    padding: 0 20px;
-    gap: 12px;
-  }
-
-  .row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-  }
-
-  .btn {
-    border-width: 6px;
-  }
 }
